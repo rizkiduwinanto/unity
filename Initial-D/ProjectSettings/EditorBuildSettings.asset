@@ -5,18 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/UIUX/LoginScreen.unity
     guid: 9e9a5f399808848d09344d58cedf41f9
-  - enabled: 0
+  - enabled: 1
     path: Assets/UIUX/MenuScreen.unity
     guid: e8893dd02aa1946e6800015b7683d222
-  - enabled: 0
+  - enabled: 1
     path: Assets/UIUX/HighscoreScreen.unity
     guid: d9ce1b5cb15bb489da5e5c5c344aa241
-  - enabled: 0
+  - enabled: 1
     path: Assets/UIUX/CarSelectionScreen.unity
     guid: 4f38993fb277b804e8cb7649d52cdf0e
   - enabled: 1
     path: Assets/RaceMap/LakesideMap/LakesideMap.unity
     guid: 2e1336748f3797f4798cf9e588e2620f
+  - enabled: 1
+    path: Assets/RaceMap/DownValleyMap/DownValleyMap.unity
+    guid: e4726aff75e6df344a20ee2f4eefdb06
+  - enabled: 1
+    path: Assets/UIUX/ModeSelection.unity
+    guid: a96fc30c0a3cfb041b64632a560caf17
+  - enabled: 1
+    path: Assets/UIUX/SceneSelectionScreen.unity
+    guid: df5968a630b2365419df10d17c446d59

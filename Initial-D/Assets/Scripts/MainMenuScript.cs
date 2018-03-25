@@ -9,7 +9,7 @@ public class MainMenuScript : MonoBehaviour {
 	public Slider slider;
 
 	public void PlayGame() {
-		SceneManager.LoadScene (4);
+		SceneManager.LoadScene (6);
 	}
 
 	public void GoToOptions() {

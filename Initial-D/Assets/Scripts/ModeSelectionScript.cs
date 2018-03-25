@@ -8,11 +8,15 @@ public class ModeSelectionScript : MonoBehaviour {
 
 	public void playVersus() {
 		PlayerPrefs.SetString ("Mode", "Multiplayer");
-		SceneManager.LoadScene (5);
+		SceneManager.LoadScene (7);
 	}
 
 	public void playTimeAttack(){
 		PlayerPrefs.SetString ("Mode", "Singleplayer");
-		SceneManager.LoadScene (5);
+		SceneManager.LoadScene (7);
+	}
+
+	public void doBack(){
+		SceneManager.LoadScene (1);
 	}
 }

@@ -7,12 +7,16 @@ using UnityEngine.UI;
 public class SceneSelectionScript : MonoBehaviour {
 
 	public void playDownValley() {
-		PlayerPrefs.SetString ("Mode", "DownValley");
+		PlayerPrefs.SetString ("Scene", "DownValley");
 		SceneManager.LoadScene (3);
 	}
 
 	public void playLakeSide(){
-		PlayerPrefs.SetString ("Mode", "LakeSide");
+		PlayerPrefs.SetString ("Scene", "LakeSide");
 		SceneManager.LoadScene (3);
+	}
+
+	public void doBack(){
+		SceneManager.LoadScene (6);
 	}
 }
