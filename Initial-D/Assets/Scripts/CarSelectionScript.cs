@@ -9,12 +9,12 @@ public class CarSelectionScript : MonoBehaviour {
 	public string mScene;
 
 	void Start(){
-		mScene = PlayerPrefs.GetString("Scene", "DownValley");
+		mScene = PlayerPrefs.GetString("Scene", "default_scene");
 	}
 
 	public void playGreen() {
 		color = 3;
-		if (mScene == "DownValley") {
+		if (mScene == "1") {
 			SceneManager.LoadScene (5);
 		} else {
 			SceneManager.LoadScene (4);
@@ -23,7 +23,7 @@ public class CarSelectionScript : MonoBehaviour {
 
 	public void playRed(){
 		color = 1;
-		if (mScene == "DownValley") {
+		if (mScene == "1") {
 			SceneManager.LoadScene (5);
 		} else {
 			SceneManager.LoadScene (4);
@@ -32,7 +32,7 @@ public class CarSelectionScript : MonoBehaviour {
 
 	public void playBlue(){
 		color = 2;
-		if (mScene == "DownValley") {
+		if (mScene == "1") {
 			SceneManager.LoadScene (5);
 		} else {
 			SceneManager.LoadScene (4);

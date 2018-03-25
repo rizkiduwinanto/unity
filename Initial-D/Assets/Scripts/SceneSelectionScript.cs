@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class SceneSelectionScript : MonoBehaviour {
 
 	public void playDownValley() {
-		PlayerPrefs.SetString ("Scene", "DownValley");
+		PlayerPrefs.SetString ("Scene", "1");
 		SceneManager.LoadScene (3);
 	}
 
 	public void playLakeSide(){
-		PlayerPrefs.SetString ("Scene", "LakeSide");
+		PlayerPrefs.SetString ("Scene", "2");
 		SceneManager.LoadScene (3);
 	}
 

@@ -88,8 +88,6 @@ public class FinishLineTrigger : MonoBehaviour {
 
             if (LapCount > maxLap)
             {
-                // disini matiin Canvas waktu main, switch ke canvas Finish tampilin posisi
-                // berdasarkan total time
                 TimerPanel.SetActive(false);
                 LapPanel.SetActive(false);
                 Minimap.SetActive(false);
