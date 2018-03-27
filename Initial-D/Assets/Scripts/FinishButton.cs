@@ -12,8 +12,8 @@ public class FinishButton : MonoBehaviour {
 	public static DatabaseManager databaseInstance;
 
 	public void backMainMenu() {
-		trackID = PlayerPrefs.GetString("Scene", "default_scene");
-		userID = PlayerPrefs.GetString ("userID", "default_userID");
+		trackID = PlayerPrefs.GetString ("Scene");
+		userID = PlayerPrefs.GetString ("userId");
 
 		totalSec = LapTimeManager.BestMinCount * 60 +
 		LapTimeManager.BestSecCount;
@@ -23,6 +23,6 @@ public class FinishButton : MonoBehaviour {
 		databaseInstance = new DatabaseManager ();
 		databaseInstance.insertHighscore (userID, trackID, totalSec);
 
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene ("MenuScreen");
 	}
 }

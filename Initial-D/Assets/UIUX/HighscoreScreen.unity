@@ -5324,7 +5324,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5422,6 +5422,7 @@ MonoBehaviour:
   track2time5: {fileID: 1471548502}
   textButtonTrack1: {fileID: 1994432903}
   textButtonTrack2: {fileID: 1300169230}
+  listText: []
 --- !u!1 &2133956880
 GameObject:
   m_ObjectHideFlags: 0

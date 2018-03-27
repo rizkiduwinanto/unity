@@ -5,6 +5,8 @@ using Mono.Data.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Data.SqlClient;
+using System.Net;
 
 public class LoginScreenScript : MonoBehaviour {
 
@@ -23,7 +25,7 @@ public class LoginScreenScript : MonoBehaviour {
 		}
 
 		databaseManager = new DatabaseManager ();
-		SqliteDataReader reader = databaseManager.doLogin (username, password);
+		JSONObject reader = databaseManager.doLogin (username, password);
 		if (isUserExist (reader)) {
 			Debug.Log ("User already exist");
 			return;
@@ -42,23 +44,20 @@ public class LoginScreenScript : MonoBehaviour {
 		}
 			
 		databaseManager = new DatabaseManager ();
-		SqliteDataReader reader = databaseManager.doLogin (username, password);
+		JSONObject reader = databaseManager.doLogin (username, password);
 		if (!isUserExist (reader)) {
 			Debug.Log ("User does not exist");
 			return;
 		}
 
-		string userId = reader ["id_user"].ToString ();
+		Dictionary<string, string> dict = reader[0].ToDictionary();
+		string userId = dict ["id_user"];
 		PlayerPrefs.SetString ("userId", userId);
 		PlayerPrefs.SetFloat ("volume", 50);
 		SceneManager.LoadScene ("MenuScreen");
 	}
 
-	private bool isUserExist(SqliteDataReader reader) {
-		int count = 0;
-		while (reader.Read ()) {
-			count = count + 1;
-		}
-		return count > 0;
+	private bool isUserExist(JSONObject reader) {
+		return reader.Count > 0;
 	}
 }

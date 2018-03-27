@@ -5,6 +5,7 @@ using Mono.Data.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Data.SqlClient;
 
 public class HighscoreScript : MonoBehaviour {
 
@@ -59,14 +60,17 @@ public class HighscoreScript : MonoBehaviour {
 	public void getHighscore(string trackId) {
 		listRecord = new List<Record> ();
 		databaseManager = new DatabaseManager ();
-		SqliteDataReader reader = databaseManager.getHighscore (trackId);
-		while (reader.Read ()) {
-			string username = (string) reader ["username"];
-			string time = (string) reader ["time"];
+		JSONObject reader = databaseManager.getHighscore (trackId);
+		int i = 0;
+		while (i < reader.Count) {
+			Dictionary<string, string> item = reader [i].ToDictionary();
+			i++;
+
+			string username = item["username"];
+			string time = item["time"];
 			Record record = new Record (username, int.Parse(time));
 			listRecord.Add (record);
 		}
-		databaseManager.closeConnection ();
 		List<Record> sortedListRecord = sortListRecord (listRecord);
 		renderListRecord (trackId, sortedListRecord);
 	}
